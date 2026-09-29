@@ -1,0 +1,18 @@
+# Pretrained models — app.py downloads these automatically on first run
+lbfmodel.yaml
+vosk-model-small-en-us-0.15/
+
+# Runtime biometric data — never commit enrolled faces or voices
+dataset/
+trainer/
+attack_cache/
+verification_log.csv
+voiceprints/*
+!voiceprints/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
