@@ -131,7 +131,14 @@ def run():
             print(" -", m)
     else:
         print("\nAll scenarios with a hard-coded expectation matched.")
+    return mismatches
+
+
+def test_expected_decisions():
+    """pytest entry point: fails if any scenario with an expectation mismatches."""
+    mismatches = run()
+    assert not mismatches, f"Scenarios with unexpected decisions: {mismatches}"
 
 
 if __name__ == "__main__":
-    run()
+    raise SystemExit(1 if run() else 0)
